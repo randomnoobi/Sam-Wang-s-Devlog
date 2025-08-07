@@ -58,7 +58,7 @@ h3 {
 }
 .small-gif {
   max-width: 15%;
-  max-height: 30%;
+  height: auto;
   image-rendering: pixelated;
   display: block;
   margin: 10px auto;
