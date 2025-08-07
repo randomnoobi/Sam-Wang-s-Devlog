@@ -1,0 +1,78 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #1c1c1e;
+  color: #f0f0f5;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #61dafb;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ffcc70;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: #f093fb;
+}
+
+.gallery .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+.code pre {
+  background-color: #2a2a2e;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 10px;
+  color: #c3f3c3;
+}
+
+.log article {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #2a2a2e;
+  border-left: 4px solid #ffcc70;
+  border-radius: 6px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 60px;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #61dafb;
+  text-decoration: none;
+}
