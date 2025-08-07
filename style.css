@@ -57,8 +57,10 @@ h3 {
   color: #c3f3c3;
 }
 .pixel-art {
-  image-rendering: pixelated;
-  width: 64px; /* Or whatever size you want */
+  width: 64px; /* or 128px, adjust to your layout */
+  image-rendering: pixelated;  /* keeps pixel art sharp */
+  display: block;
+  margin: 10px auto;
 }
 
 .log article {
