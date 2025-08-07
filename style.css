@@ -78,6 +78,30 @@ h3 {
   border-left: 4px solid #ffcc70;
   border-radius: 6px;
 }
+details {
+  background-color: #2a2a2e;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+summary {
+  font-weight: bold;
+  color: #ffcc70;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+details[open] summary {
+  color: #61dafb;
+}
+
+pre {
+  margin-top: 10px;
+  overflow-x: auto;
+  color: #c3f3c3;
+}
 
 footer {
   text-align: center;
