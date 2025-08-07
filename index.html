@@ -37,125 +37,128 @@
     </section>
     <section class="code">
       <h2> Movement Code</h2>
-      <pre><code>
-using UnityEngine;
-
-public class MovementScript : MonoBehaviour
-{
-    public float speed = 5f;
-    public float jumpHeight = 5f;
-    public float climbSpeed = 3f;
-    bool grounded = false;
-    public bool jumping;
-    public LayerMask wallMask;
-    public Transform wallCheck;
-    public float wallCheckRadius = 0.1f;
-    public LayerMask groundMask;
-    public Transform groundCheck;
-    public float groundCheckRadius = 0.1f;
-    public Transform pushCheck;
-    public float pushCheckRadius = 0.2f;
-    public LayerMask pushableMask;
-    public Rigidbody2D rb2d;
-    private Animator animator; // Reference to the Animator component
-    private SpriteRenderer spriteRenderer;
-    private bool isTouchingWall = false;
-    private float defaultGravity;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        rb2d = GetComponent<Rigidbody2D>();
-
-        animator = transform.Find("Visuals").GetComponent<Animator>();
-
-        spriteRenderer = transform.Find("Visuals").GetComponent<SpriteRenderer>();
-
-        defaultGravity = rb2d.gravityScale;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        float move = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
-        // Apply basic movement
-        rb2d.linearVelocity = new Vector2(move * speed, rb2d.linearVelocity.y);
-
-        // Ground and wall checks
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundMask);
-        isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, wallMask);
-
-        // === Wall Climbing Trigger ===
-        bool pressingIntoWall = (isTouchingWall && move != 0 &&
-            ((spriteRenderer.flipX && move < 0) || (!spriteRenderer.flipX && move > 0)));
-
-        bool isClimbing = !grounded && pressingIntoWall;
-
-        if (isClimbing)
-        {
-            // Stick to wall vertically
-            rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, climbSpeed); // or climbSpeed if you want vertical motion
-            rb2d.gravityScale = 0;
-        }
-        else
-        {
-            rb2d.gravityScale = defaultGravity;
-        }
-
-        // === Jumping ===
-        if (grounded && Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            float jumpForce = Mathf.Sqrt(2f * Physics2D.gravity.magnitude * rb2d.gravityScale * jumpHeight) * rb2d.mass;
-            rb2d.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-        }
-       bool isTouchingPushable = Physics2D.OverlapCircle(pushCheck.position, pushCheckRadius, pushableMask);
-
-        // Are we actively pushing into the box (moving into it)?
-        bool pushingIntoBox =
-            isTouchingPushable &&
-            Mathf.Abs(move) > 0.1f &&
-            ((spriteRenderer.flipX && move < 0) || (!spriteRenderer.flipX && move > 0));
-
-        // Flip sprite
-        if (move > 0) spriteRenderer.flipX = false;
-        else if (move < 0) spriteRenderer.flipX = true;
-
-        // Animator sync
-        bool isMoving = Mathf.Abs(move) > 0.1f;
-        bool isJumping = !grounded && rb2d.linearVelocity.y > 0.1f;
-        bool isFalling = !grounded && rb2d.linearVelocity.y < -0.1f;
-
-        animator.SetBool("isMoving", isMoving);
-        animator.SetBool("isJumping", isJumping);
-        animator.SetBool("isFalling", isFalling);
-        animator.SetBool("isClimbing", isClimbing);
-        animator.SetBool("isPushing", pushingIntoBox);
-    }
-
-    private void OnDrawGizmos()
-    {
-        // Draw a visual representation of the ground check radius in the editor
-        if (groundCheck != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-        }
-        if (wallCheck != null)
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(wallCheck.position, wallCheckRadius);
-        }
-        if (pushCheck != null)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(pushCheck.position, pushCheckRadius);
-        }
-    }
-}
-      </code></pre>
+        <details>
+          <summary>Click to expand code</summary>
+            <pre><code>
+                using UnityEngine;
+                
+                public class MovementScript : MonoBehaviour
+                {
+                    public float speed = 5f;
+                    public float jumpHeight = 5f;
+                    public float climbSpeed = 3f;
+                    bool grounded = false;
+                    public bool jumping;
+                    public LayerMask wallMask;
+                    public Transform wallCheck;
+                    public float wallCheckRadius = 0.1f;
+                    public LayerMask groundMask;
+                    public Transform groundCheck;
+                    public float groundCheckRadius = 0.1f;
+                    public Transform pushCheck;
+                    public float pushCheckRadius = 0.2f;
+                    public LayerMask pushableMask;
+                    public Rigidbody2D rb2d;
+                    private Animator animator; // Reference to the Animator component
+                    private SpriteRenderer spriteRenderer;
+                    private bool isTouchingWall = false;
+                    private float defaultGravity;
+                
+                    // Start is called once before the first execution of Update after the MonoBehaviour is created
+                    void Start()
+                    {
+                        rb2d = GetComponent();
+                
+                        animator = transform.Find("Visuals").GetComponent();
+                
+                        spriteRenderer = transform.Find("Visuals").GetComponent();
+                
+                        defaultGravity = rb2d.gravityScale;
+                
+                    }
+                
+                    // Update is called once per frame
+                    void Update()
+                    {
+                        float move = Input.GetAxisRaw("Horizontal");
+                        float vertical = Input.GetAxisRaw("Vertical");
+                
+                        // Apply basic movement
+                        rb2d.linearVelocity = new Vector2(move * speed, rb2d.linearVelocity.y);
+                
+                        // Ground and wall checks
+                        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundMask);
+                        isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, wallMask);
+                
+                        // === Wall Climbing Trigger ===
+                        bool pressingIntoWall = (isTouchingWall && move != 0 &&
+                            ((spriteRenderer.flipX && move < 0) || (!spriteRenderer.flipX && move > 0)));
+                
+                        bool isClimbing = !grounded && pressingIntoWall;
+                
+                        if (isClimbing)
+                        {
+                            // Stick to wall vertically
+                            rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, climbSpeed); // or climbSpeed if you want vertical motion
+                            rb2d.gravityScale = 0;
+                        }
+                        else
+                        {
+                            rb2d.gravityScale = defaultGravity;
+                        }
+                
+                        // === Jumping ===
+                        if (grounded && Input.GetKeyDown(KeyCode.UpArrow))
+                        {
+                            float jumpForce = Mathf.Sqrt(2f * Physics2D.gravity.magnitude * rb2d.gravityScale * jumpHeight) * rb2d.mass;
+                            rb2d.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                        }
+                       bool isTouchingPushable = Physics2D.OverlapCircle(pushCheck.position, pushCheckRadius, pushableMask);
+                
+                        // Are we actively pushing into the box (moving into it)?
+                        bool pushingIntoBox =
+                            isTouchingPushable &&
+                            Mathf.Abs(move) > 0.1f &&
+                            ((spriteRenderer.flipX && move < 0) || (!spriteRenderer.flipX && move > 0));
+                
+                        // Flip sprite
+                        if (move > 0) spriteRenderer.flipX = false;
+                        else if (move < 0) spriteRenderer.flipX = true;
+                
+                        // Animator sync
+                        bool isMoving = Mathf.Abs(move) > 0.1f;
+                        bool isJumping = !grounded && rb2d.linearVelocity.y > 0.1f;
+                        bool isFalling = !grounded && rb2d.linearVelocity.y < -0.1f;
+                
+                        animator.SetBool("isMoving", isMoving);
+                        animator.SetBool("isJumping", isJumping);
+                        animator.SetBool("isFalling", isFalling);
+                        animator.SetBool("isClimbing", isClimbing);
+                        animator.SetBool("isPushing", pushingIntoBox);
+                    }
+                
+                    private void OnDrawGizmos()
+                    {
+                        // Draw a visual representation of the ground check radius in the editor
+                        if (groundCheck != null)
+                        {
+                            Gizmos.color = Color.red;
+                            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+                        }
+                        if (wallCheck != null)
+                        {
+                            Gizmos.color = Color.blue;
+                            Gizmos.DrawWireSphere(wallCheck.position, wallCheckRadius);
+                        }
+                        if (pushCheck != null)
+                        {
+                            Gizmos.color = Color.green;
+                            Gizmos.DrawWireSphere(pushCheck.position, pushCheckRadius);
+                        }
+                    }
+                }
+            </code></pre>
+        </details>
     </section>
 
   </main>
