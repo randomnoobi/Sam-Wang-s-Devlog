@@ -56,6 +56,10 @@ h3 {
   margin-top: 10px;
   color: #c3f3c3;
 }
+.pixel-art {
+  image-rendering: pixelated;
+  width: 64px; /* Or whatever size you want */
+}
 
 .log article {
   margin-top: 20px;
