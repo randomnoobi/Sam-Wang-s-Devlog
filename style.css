@@ -56,9 +56,10 @@ h3 {
   margin-top: 10px;
   color: #c3f3c3;
 }
-.pixel-art {
-  width: 64px; /* or 128px, adjust to your layout */
-  image-rendering: pixelated;  /* keeps pixel art sharp */
+.small-gif {
+  max-width: 15%;
+  max-height: 30%;
+  image-rendering: pixelated;
   display: block;
   margin: 10px auto;
 }
