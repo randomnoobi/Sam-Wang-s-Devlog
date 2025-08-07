@@ -1,11 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sam Wang's Game Dev Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RandomNoobi | Game Dev Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <h1>Hello! I'm Sam Wang</h1>
-  <p>This is my portfolio for my game development projects.</p>
+  <header>
+    <h1>🎮 RandomNoobi’s Game Dev Log</h1>
+    <p>Documenting my journey in making 2D platformers, pixel art, and more.</p>
+  </header>
+
+  <main>
+    <section class="gallery">
+      <h2>🖼️ Screenshots & GIFs</h2>
+      <div class="grid">
+        <img src="your-gif-url-here.gif" alt="Climbing Animation" />
+        <img src="your-screenshot-url.png" alt="Game Screenshot" />
+        <!-- Add more images as needed -->
+      </div>
+    </section>
+
+    <section class="code">
+      <h2>💻 Code Snippet</h2>
+      <pre><code>
+// Wall climbing logic (Unity C#)
+if (isTouchingWall && horizontal != 0) {
+    isClimbing = true;
+    rb.velocity = new Vector2(rb.velocity.x, climbSpeed);
+}
+      </code></pre>
+    </section>
+
+    <section class="log">
+      <h2>📓 Devlog</h2>
+      <article>
+        <h3>Week 1: Getting the Climb Mechanic to Work</h3>
+        <p>I struggled with wall detection and input handling, but finally figured it out by separating ground and wall layers. Now my player sticks to walls!</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 RandomNoobi • <a href="https://github.com/randomnoobi" target="_blank">GitHub</a></p>
+  </footer>
 </body>
 </html>
+
