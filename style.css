@@ -63,6 +63,13 @@ h3 {
   display: block;
   margin: 10px auto;
 }
+.gif-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
 
 .log article {
   margin-top: 20px;
