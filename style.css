@@ -141,3 +141,10 @@ footer a {
   color: #61dafb;
   text-decoration: none;
 }
+
+.sprite-img {
+  max-width: 30%;  /* adjust to taste: 25%, 40%, etc. */
+  height: auto;
+  image-rendering: pixelated;
+  display: block;
+}
