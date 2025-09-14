@@ -143,8 +143,8 @@ footer a {
 }
 
 .sprite-img {
-  max-width: 30%;  /* adjust to taste: 25%, 40%, etc. */
-  height: auto;
+  max-height: 150px;   /* all sprites same height */
+  width: auto;
   image-rendering: pixelated;
-  display: block;
 }
+
