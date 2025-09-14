@@ -143,8 +143,13 @@ footer a {
 }
 
 .sprite-img {
-  max-height: 750px;   /* all sprites same height */
-  width: auto;
+  width: 100%;
+  height: auto;
+  min-height: 500px;   /* scale small images up */
   image-rendering: pixelated;
+  object-fit: contain;
+  background-color: #1c1c1e; /* optional */
+  border-radius: 6px;
 }
+
 
