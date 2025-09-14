@@ -143,12 +143,18 @@ footer a {
 }
 
 .sprite-img {
-  width: 500px;
-  height: 500px;
-  object-fit: contain;    /* keeps proportions */
+  width: auto;
+  height: auto;
+  max-width: 750px;     /* don’t let them grow beyond this */
+  max-height: 750px;    /* same for height */
+  min-width: 150px;     /* magnify small ones */
+  min-height: 150px;    /* magnify small ones */
+  object-fit: contain;  /* keep proportions */
   image-rendering: pixelated;
-  background-color: #1c1c1e; /* fills empty space */
+  background-color: #1c1c1e; /* optional padding */
   border-radius: 6px;
+  margin: 0 auto;       /* keeps centered inside grid cell */
 }
+
 
 
