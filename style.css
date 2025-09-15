@@ -154,8 +154,8 @@ footer a {
 
 .grid > img {
   aspect-ratio: 1 / 1;   /* make all grid cells square */
-  min-width: 250px;
-  min-height: 250px;
+  min-width: 150px;
+  min-height: 150px;
 }
 
 
