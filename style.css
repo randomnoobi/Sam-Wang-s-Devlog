@@ -143,19 +143,12 @@ footer a {
 }
 
 .sprite-img {
-  width: 150px;
-  height: 150px;
+  width: 150px !important;;
+  height: 150px !important;;
   object-fit: contain;     /* keep aspect ratio, fit inside 150x150 */
   image-rendering: pixelated;
   background-color: #1c1c1e; /* optional padding frame */
   border-radius: 6px;
-}
-
-
-.grid > img {
-  aspect-ratio: 1 / 1;   /* make all grid cells square */
-  min-width: 150px;
-  min-height: 150px;
 }
 
 
