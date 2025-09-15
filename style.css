@@ -140,8 +140,8 @@ footer a {
 }
 
 .gallery .grid .sprite-img {
-  width: 150px !important;
-  height: 150px !important;
+  width: 250px !important;
+  height: 250px !important;
   object-fit: contain;
   image-rendering: pixelated;
   background-color: #1c1c1e; /* frame background */
